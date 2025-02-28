@@ -36,6 +36,7 @@ main > * {
   visibility: visible !important;
   opacity: 1 !important;
   transition: all 1s ease-in-out;
+  text-align: center;
 }
 .hide {
   display: none; /* Instead of fading out, it just hides */
@@ -59,6 +60,7 @@ main > * {
 .p {
   font-size: 30px;
   transition: all 1s ease-in-out;
+  text-align: center;
 }
 @media screen and (max-width: 720px) {
   .hero-text {
