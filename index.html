@@ -1,72 +1,446 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>bevza.us</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
+<html lang="en" class="wf-proximanova-n4-active wf-proximanova-n7-active wf-proximanova-n3-active wf-proximanova-i4-active wf-proximanova-i3-active wf-proximanova-i7-active wf-active" foxified="">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="Hugo 0.85.0">
+    <link rel="preload" as="script" href="./bus_files/loader.js.download">
+    <script type="text/javascript" async="" src="./bus_files/destination"></script>
+    <script async="" src="./bus_files/fbevents.js.download"></script>
+    <script type="text/javascript" async="" src="./bus_files/js"></script>
+    <script async="" src="./bus_files/gtm.js.download"></script>
+    <script src="./bus_files/gno4vye.js.download" async=""></script>
+    <script id="spcloader" type="text/javascript" async="" charset="utf-8" src="./bus_files/loader.js.download"></script>
+    <script></script>
+    <style>
+      #didomi-host {
+        --color-light: #fff;
+        --color-dark: #ff0000;
+        --border-radius: 0;
+        --outer-border: #e4e4e4;
+        --inner-border: var(--color-dark);
+      }
+    </style>
+    <style>
+      #didomi-host .didomi-buttons .didomi-button {
+        border-radius: var(--border-radius) !important;
+        border: 1px solid var(--color-dark) !important;
+        justify-content: center;
+      }
 
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<canvas id="canvas"></canvas>
-<div class="hero-text">
-    <h2>bevza.us</h2>
-    <p>hello@bevza.us</p>
-    <p class="p">premium websites</p>
-</div>
-<script type="x-shader/x-fragment">#version 300 es  
-precision highp float;
-out vec4 O;
-uniform float time;
-uniform vec2 resolution;
-#define FC gl_FragCoord.xy
-#define R resolution
-#define MN min(R.x,R.y)
-#define T (time+660.)
-#define S smoothstep
-#define N normalize
-#define rot(a) mat2(cos((a)-vec4(0,11,33,0)))
-float rnd(vec2 p) {
-	p=fract(p*vec2(12.9898,78.233));
-	p+=dot(p,p+34.56);
-	return fract(p.x*p.y);
-}
-float noise(vec2 p) {
-	vec2 i=floor(p), f=fract(p), u=f*f*(3.-2.*f), k=vec2(1,0);
-	float
-	a=rnd(i),
-	b=rnd(i+k),
-	c=rnd(i+k.yx),
-	d=rnd(i+1.);
-	return mix(mix(a,b,u.x),mix(c,d,u.x),u.y);
-}
-float fbm(vec2 p) {
-	float t=.0, a=1., h=.0; mat2 m=mat2(1.,-1.2,.2,1.2);
-	for (float i=.0; i<5.; i++) {
-		t+=a*noise(p);
-		p*=2.*m;
-		a*=.5;
-		h+=a;
-	}
-	return t/h;
-}
-void main() {
-	vec2 uv=(FC-.5*R)/R.y, k=vec2(0,T*.015); 
-	vec3 col=vec3(1);
-  uv.x+=.25;
-	uv*=vec2(2,1);
-	float n=fbm(uv*.28+vec2(-T*.01,0));
-	n=noise(uv*3.+n*2.);
-	col.r-=fbm(uv+k+n);
-	col.g-=fbm(uv*1.003+k+n+.003);
-	col.b-=fbm(uv*1.006+k+n+.006);
-	col=mix(col,vec3(1),dot(col,vec3(.21,.71,.07)));
-	col=mix(vec3(.08),col,min(time*.1,1.));
-	col=clamp(col,.08,1.);
-	O=vec4(col,1);
-}</script>
-<!-- partial -->
-  <script  src="./script.js"></script>
+      #didomi-host .didomi-buttons .didomi-button.didomi-button-standard {
+        background: var(--color-light) !important;
+        color: var(--color-dark) !important;
+        border: 1px solid #999 !important;
+      }
 
-</body>
+      #didomi-host .didomi-buttons .didomi-button.didomi-button-standard:hover,
+      #didomi-host .didomi-buttons .didomi-button.didomi-button-standard:focus {
+        background: var(--color-light) !important;
+        color: var(--color-dark) !important;
+        border: 1px solid var(--color-dark) !important;
+      }
+
+      #didomi-host .didomi-buttons .didomi-button.didomi-button-highlight {
+        background: var(--color-dark) !important;
+        color: var(--color-light) !important;
+      }
+
+      #didomi-host .didomi-buttons .didomi-button.didomi-button-highlight:hover,
+      #didomi-host .didomi-buttons .didomi-button.didomi-button-highlight:focus {
+        background: var(--color-light) !important;
+        color: var(--color-dark) !important;
+        border: 1px solid var(--color-dark) !important;
+      }
+
+      #didomi-host .didomi-components-radio__option.didomi-components-radio__option--agree {
+        background-color: var(--color-dark) !important;
+        color: var(--color-light) !important;
+      }
+
+      .didomi-consent-popup-footer.didomi-popup-footer>a>img,
+      .didomi-consent-popup-footer.didomi-popup-footer>a>svg {
+        display: none;
+      }
+
+      #didomi-host .didomi-exterior-border {
+        border-color: var(--outer-border) !important;
+      }
+
+      #didomi-host .didomi-popup-container {
+        border-color: var(--inner-border) !important;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="canonical" href="https://bevza.us/en/">
+    <title>BEVZA | Commercial &amp; Industrial Construction &amp; Building</title>
+    <meta name="description" content="BEVZA is a Commercial &amp; Industrial construction &amp; building contractor based in the Carolinas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bevza.us/en/">
+    <meta property="og:site_name" content="BEVZA">
+    <meta property="og:image" content="https://bevza.us/images/share-image.jpg">
+    <meta property="og:image:secure_url" content="https://bevza.us/images/share-image.jpg">
+    <link rel="stylesheet" type="text/css" href="./bus_files/main.min.61b6b4ffe84c67ebad0ef2551d92c6c804d93dcfade754cde73349dfb10f7acf.css" media="screen">
+    <script src="./bus_files/typekit.js.download"></script>
+    <script type="text/javascript" src="./bus_files/b50b7f30-3efc-40a4-958b-47c84a6ef83f" data-awssuidacr="68a59834-8359-4774-9407-4f24c6e83874"></script>
+    <script type="text/javascript" src="./bus_files/afde4f0c-4096-4aeb-b345-d1aea539851b"></script>
+    <script type="text/javascript" async="" src="./bus_files/sdk.4c4080649bd6edc8e492af5cfeebb9118560dd00.js.download" charset="utf-8"></script>
+    <script attributionsrc="" type="text/javascript" async="" src="./bus_files/f.txt"></script>
+    <script attributionsrc="" type="text/javascript" async="" src="./bus_files/f(1).txt"></script>
+  </head>
+  <body class=" is-home  " cz-shortcut-listen="true">
+    <header class="site-header  is-home ">
+      <a href="https://bevza.us/en" class="branding"></a>
+      <nav>
+        <ul class="main-nav">
+          <li>
+            <a href="https://bevza.us/#/">Solutions</a>
+          </li>
+          <li>
+            <a href="https://bevza.us/#/">PRICING</a>
+          </li>
+          <li>
+            <a href="https://bevza.us/#/">About</a>
+          </li>
+          <li>
+            <a href="https://bevza.us/#/">Careers</a>
+          </li>
+          <li>
+            <a href="https://bevza.us/contact-us/">Contact</a>
+          </li>
+        </ul>
+        <ul class="lang-switcher">
+          <li>
+            <a href="+16469808008">646-980-8008</a>
+          </li>
+          <!--li class="active"><a href="https://bevza.us/en/">en</a></li-->
+        </ul>
+      </nav>
+      <button id="nav_btn" class="nav-btn"></button>
+    </header>
+    <main>
+      <section id="intro" class="video-hero">
+        <h1 style="position: absolute; left:-99999px">Blasting and Drilling</h1>
+        <video playsinline="" autoplay="" muted="" loop="">
+          <source src="./bus_files/website-hero-BEVZA.webm" type="video/webm">
+          <source src="./bus_files/website-hero-BEVZA.mp4" type="video/mp4">
+        </video>
+        <a id="video_hero_cta" href="https://player.vimeo.com/video/644857108?h=9f39c69bfc&amp;badge=0&amp;autoplay=1&amp;autopause=0&amp;player_id=0&amp;app_id=58479">
+          <img src="./bus_files/play-white.svg" alt="">
+          <div>Watch the full video</div>
+        </a>
+        <lottie-player src="./bus_files/BEVZA_anim_white-en.json" background="#ffffff" speed="0.6" style="" autoplay=""></lottie-player>
+      </section>
+      <style>
+        #popup-close {
+          position: absolute;
+          top: -2rem;
+          right: -2rem;
+          cursor: pointer;
+          transition: .3s ease-in-out;
+          background: transparent;
+          border: 2px solid #fff;
+          color: #fff;
+          width: 30px;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          display: none;
+        }
+
+        #popup-close:hover {
+          background: #fff;
+          color: #333;
+        }
+
+        #popup-close>span {
+          font-size: 25px;
+          position: relative;
+          top: -2px;
+        }
+
+        .iframe-embed {
+          position: relative;
+          padding-top: 56.25%;
+          width: 80vw;
+          max-width: 1920px;
+        }
+
+        .iframe-embed iframe {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      </style>
+      <script src="./bus_files/lottie-player.js.download"></script>
+      <link rel="stylesheet" href="./bus_files/bolean-lightbox.dist.css">
+      <script src="./bus_files/bolean-lightbox.dist.js.download"></script>
+      <script>
+        (() => {
+          const lottiePlayer = document.querySelectorAll('lottie-player')[0];
+          const lottiePlayerShadow = lottiePlayer.shadowRoot
+          const animation = lottiePlayerShadow.querySelectorAll('#animation')[0];
+          animation.style = 'background: transparent';
+        })();
+        const openVideoModal = (scope) => {
+          const videoTpl = (vimeoId) => {
+            return `
+      
+																							<div class="iframe-embed">
+																								<iframe src="https://player.vimeo.com/video/${vimeoId}?autoplay=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+																							</div>
+																							<div id="popup-close">
+																								<span>&times;</span>
+																							</div>
+      `;
+          };
+          const customCloseBtn = function() {
+            const btnClose = document.getElementById('popup-close');
+            btnClose.addEventListener('click', function() {
+              const lightbox = document.querySelectorAll('.basicLightbox')[0];
+              lightbox.outerHTML = '';
+            }, false);
+          };
+          const videModal = new BoleanLightbox({
+            content: videoTpl('188897500'),
+            callback: {
+              open: () => {
+                customCloseBtn();
+              },
+              close: () => {}
+            }
+          });
+        };
+        const heroCta = document.getElementById('video_hero_cta');
+        heroCta.addEventListener('click', function() {
+          event.preventDefault();
+          openVideoModal();
+        }, false);
+      </script>
+      <section class="summary home">
+        <h2 id="two-teams-passionate-about-blasting-for-40-years">TWO TEAMS PASSIONATE ABOUT CONSTRUCTION <strong>For 20 years</strong>
+        </h2>
+        <section class="">
+          <p>BEVZA.US, located throughout North & South Carolina, is a leader in industrial work in the commercial, civil engineering and quarry sectors. BEVZA US combines the strength of two companies whose reputations speak for themselves: Bevza Blast & MM Construct.</p>
+          <p>With more than 20 years of experience, we’re known for the quality and safety of our work, our hard-working teams and our cutting-edge equipment. Customer satisfaction is one of our core values. Always responsive to your needs and expectations, we ensure work that meet the industry’s highest standards.</p>
+        </section>
+        <a href="#" class="cta-link">About US</a>
+      </section>
+      <section id="" class="info right">
+        <figure>
+          <picture>
+            <source src="./bus_files/res.webp" type="image/webp">
+            <source src="./bus_files/res.jpg" type="image/jpg">
+            <img loading="lazy" src="./bus_files/res.jpg" alt="">
+          </picture>
+        </figure>
+        <section>
+          <h2 id="experts-in-residential-blasting">Experts in <strong>Commercial Construction</strong>
+          </h2>
+          <p>Let us take care of your commercial and industrial work, whether to prepare land for a foundation or building or finish rebuilding your house. Our professional team can get to your location in no time and take care of the work quickly, safely and at competitive prices. <a href="#">Contact us for a free estimate</a>. </p>
+          <a href="https://bevza.us/blasting/#residential" class="cta-link">Find out more</a>
+        </section>
+      </section>
+      <section id="" class="info left">
+        <figure>
+          <picture>
+            <source src="./bus_files/genie.webp" type="image/webp">
+            <source src="./bus_files/genie.jpg" type="image/jpg">
+            <img loading="lazy" src="./bus_files/genie.jpg" alt="">
+          </picture>
+        </figure>
+        <section>
+          <h2 id="specialists-in-civil-engineering-projects">Specialists in <strong>Engineering projects</strong>
+          </h2>
+          <p>Known for its high-precision equipment, flawless expertise and many years of experience, BEVZA.US has worked on many civil engineering projects. Request a <a href="#">quote</a> for a water main trench, deep foundation projects, anchors or any other type of work. </p>
+          <a href="#" class="cta-link">Find out more</a>
+        </section>
+      </section>
+      <section class="section-join-us">
+        <h2>JOIN THE BEVZA US TEAM</h2>
+        <p> Are you a dedicated, hard-working individual looking for new challenges? We’d like to meet you. </p>
+        <a class="cta-link" href="#">Find out more</a>
+      </section>
+      <section id="quotes" class="quotes">
+        <div class="container">
+          <h2>What our customers are saying about us</h2>
+          <ul data-quotes="">
+            <li class="quote active">
+              <q>Impeccable service, accurate, dynamic work, exceptional speed and efficiency and, most importantly, respectable value for the money. I recommend this company to anyone who wants a job well done.</q>
+              <address>
+                <span class="name">Allan Ranch</span>
+                <span class="city">Greenville</span>
+              </address>
+            </li>
+            <li class="quote next">
+              <q>Wow – what a team!!! Positive and good-humoured, professionals who are responsive to customers and mindful of their budget!!! They give valuable advice!! Thanks</q>
+              <address>
+                <span class="name">Tim Burr</span>
+                <span class="city">Anderson</span>
+              </address>
+            </li>
+            <li class="quote">
+              <q>Impeccable service, accurate, dynamic work, exceptional speed and efficiency and, most importantly, respectable value for the money. I recommend this company to anyone who wants a job well done.</q>
+              <address>
+                <span class="name">Allan Ranch</span>
+                <span class="city">Greenville</span>
+              </address>
+            </li>
+            <li class="quote prev">
+              <q>Wow – what a team!!! Positive and good-humoured, professionals who are responsive to customers and mindful of their budget!!! They give valuable advice!! Thanks</q>
+              <address>
+                <span class="name">Tim Burr</span>
+                <span class="city">Anderson</span>
+              </address>
+            </li>
+          </ul>
+          <span class="prev" onclick="updateQuotes('left');"></span>
+          <span class="next" onclick="updateQuotes('right');"></span>
+        </div>
+      </section>
+      <section class="rating">
+        <a href="https://www.google.com/search?q=#" target="_blank">This business is evaluated <span class="star">
+            <img src="./bus_files/google-logo.svg" alt="">
+          </span> Google (based on 56 reviews) </a>
+      </section>
+      <script src="./bus_files/lib-sanity.js.download" defer=""></script>
+      <script src="./bus_files/quotes-slider.js.download" defer=""></script>
+      <script src="./bus_files/quotes-slider-touch.js.download" defer=""></script>
+    </main>
+    <section class="service-area">
+      <h2>Areas Served</h2>
+      <p> Our services are available in the following cities and surrounding areas: <br> In South Carolina: Spartanburg, Greenville, Anderson, Union, Greenwood and Pickens. <br>In North Carolina: Charlotte, Asheville and Robbinsville. </p>
+    </section>
+    <section class="logo-wall">
+      <ul>
+        <li>
+          <img src="./bus_files/apcha-logo.svg" alt="">
+        </li>
+        <li>
+          <img src="./bus_files/amd-logo.png" alt="">
+          <span>License Number : 4852-6842-01</span>
+        </li>
+      </ul>
+    </section>
+    <footer class="site-footer">
+      <section>
+        <ul>
+          <li class="site-footer__logo-group">
+            <img src="./bus_files/logo.svg" alt="" class="logo">
+            <div> In partnership with</div>
+            <img src="./bus_files/logo-m2p.svg" alt="" class="logo__m2p">
+          </li>
+          <li>
+            <a href="#" target="_blank"> Spartanburg, South Carolina </a>
+            <a href="mailto:info@bevza.us" class="icon invert email">info@bevza.us</a>
+            <a href="https://www.facebook.com/groupeBEVZA" class="icon invert facebook" target="_blank"> Facebook </a>
+          </li>
+          <li>
+            <a href="tel:+16469808008" class="icon invert phone">646-980-8008</a>
+            <div id="opening-hours">
+              <h2 class="title icon invert clock">Business Hour <i></i>
+              </h2>
+              <span></span>
+              <ul>
+                <li class="sunday"></li>
+                <li class="monday"></li>
+                <li class="tuesday"></li>
+                <li class="wednesday"></li>
+                <li class="thursday"></li>
+                <li class="friday"></li>
+                <li class="saturday"></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <ul>
+          <li>©2025 <a href="https://bevza.us/">BEVZA US</a>. All rights reserved </li>
+          <li>
+            <a href="https://bevza.us/en/avis-legal/">Legal notice</a>
+          </li>
+          <li>
+            </span> by <a href="https://mmlegacy.com/" target="_blank">MM Legacy</a>
+            <a href="" target="_blank"></a>
+          </li>
+        </ul>
+      </section>
+    </footer>
+    <div class="status-bar">
+      <a href="tel:6469808008" class="icon invert phone">646-980-8008</a>
+    </div>
+    <script src="./bus_files/main.js.download"></script>
+    <script>
+      (function() {
+        var day_index = {
+          0: 'sunday',
+          1: 'monday',
+          2: 'tuesday',
+          3: 'wednesday',
+          4: 'thursday',
+          5: 'friday',
+          6: 'saturday'
+        };
+        var opening_hour_index = {
+          0: 'Closed',
+          1: '07:00 to 17:00',
+          2: '07:00 to 17:00',
+          3: '07:00 to 17:00',
+          4: '07:00 to 17:00',
+          5: '07:00 to 17:00',
+          6: '07:00 to 17:00'
+        };
+        var currentDay = function() {
+          var day = new Date().getDay();
+          return day_index[day];
+        };
+        var renderHourList = function() {
+          var dayList = document.querySelectorAll('#opening-hours ul')[0];
+          Object.keys(day_index).forEach(function(el) {
+            var li = document.createElement('li');
+            li.classList.add(day_index[el]);
+            li.innerHTML = day_index[el].charAt(0).toUpperCase() + day_index[el].slice(1) + ': ' + opening_hour_index[el];
+            if (day_index[el] === currentDay()) {
+              li.classList.add('today');
+            }
+            dayList.appendChild(li);
+          });
+        };
+        var renderCurrentDayHour = function() {
+          var curentDayHour = document.querySelectorAll('#opening-hours span')[0];
+          Object.keys(day_index).forEach(function(el) {
+            if (day_index[el] === currentDay()) {
+              curentDayHour.innerHTML = 'Today: ' + opening_hour_index[el];
+            }
+          });
+        };
+        window.addEventListener('DOMContentLoaded', function() {
+          renderHourList();
+          renderCurrentDayHour();
+          document.querySelectorAll('#opening-hours .title')[0].addEventListener('click', function() {
+            document.querySelectorAll('#opening-hours ul')[0].classList.toggle('active');
+            document.querySelectorAll('#opening-hours span')[0].classList.toggle('hidden');
+          }, false);
+        }, false);
+      }());
+    </script>
+    <script type="text/javascript" id="" charset="">
+      ! function(b, e, f, g, a, c, d) {
+        b.fbq || (a = b.fbq = function() {
+          a.callMethod ? a.callMethod.apply(a, arguments) : a.queue.push(arguments)
+        }, b._fbq || (b._fbq = a), a.push = a, a.loaded = !0, a.version = "2.0", a.queue = [], c = e.createElement(f), c.async = !0, c.src = g, d = e.getElementsByTagName(f)[0], d.parentNode.insertBefore(c, d))
+      }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+      fbq("init", "#");
+      fbq("set", "agent", "tmgoogletagmanager", "4089001021327241");
+      fbq("track", "PageView");
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=#&amp;ev=PageView&amp;noscript=1">
+    </noscript>
+  </body>
 </html>

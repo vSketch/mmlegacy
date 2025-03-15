@@ -1,0 +1,109 @@
+/**
+* @dependencies : lib-sanity.js
+*/
+
+$e(window, 'load', function() {
+  /* Initialize the quotes container */
+  quotes = $all('*[data-quotes] > .quote');
+
+  quotesLength = quotes.length;
+  activeQuote = 0;
+  initQuotes();
+});
+
+/* Initializes quotes by giving them the appropriate classes */
+function initQuotes() {
+  if (quotesLength < 3) { return; }
+
+  quotes[0].classList.add('active');
+  quotes[1].classList.add('next');
+  quotes[quotesLength - 1].classList.add('prev');
+}
+
+/** Updates quotes' positions by giving them the appropriate classes /
+* @param {string} direction - on which side the slideIn occurs */
+
+function updateQuotes(direction) {
+
+  /* If the quotes slider is in a transitionnal state, cancel */
+  if ($first('*[data-quotes]').classList.contains('transition'))
+    return;
+
+  var in_pos;
+  var out_pos;
+
+  /* Resets quote positions */
+  quotes[activeQuote].classList.remove('active');
+  quotes[findPreviousQuote()].classList.remove('prev');
+  quotes[findNextQuote()].classList.remove('next');
+
+  if (direction == 'left') {
+    /* Gets the out quote's index and sets its position */
+    out_pos = findNextQuote();
+    quotes[out_pos].classList.add('outRight');
+
+    /* Get the new active quote's index */
+    (activeQuote > 0) ? activeQuote--
+                      : activeQuote = (quotesLength - 1);
+
+    /* Get the sliding in quote's index */
+    ((activeQuote - 1) >= 0) ? in_pos = activeQuote - 1
+                             : in_pos = quotesLength - 1;
+  }
+  if (direction == 'right') {
+    /* Gets the out quote's index and sets its position */
+    out_pos = findPreviousQuote();
+    quotes[out_pos].classList.add('outLeft');
+
+    /* Determine which quote is the new active one */
+    (activeQuote < (quotesLength - 1)) ? activeQuote++
+                                       : activeQuote = 0;
+
+    /* Determine which quote is sliding in */
+    ((activeQuote + 1) <= (quotesLength - 1)) ? in_pos = activeQuote + 1
+                                              : in_pos = 0;
+  }
+
+  /* Sets the new quotes' positions */
+  quotes[activeQuote].classList.add('active');
+  quotes[findPreviousQuote()].classList.add('prev');
+  quotes[findNextQuote()].classList.add('next');
+
+  /* Hack to prevent wrong-side animation */
+  quotes[in_pos].classList.add('no-transition');
+  setTimeout(function() { quotes[in_pos].classList.remove('no-transition') }, 20);
+
+  /* Positions the in slide properly before the animation */
+  quotes[in_pos].classList.add('slideIn');
+  setTimeout(function() {
+    quotes[in_pos].classList.remove('slideIn');
+  }, 20);
+
+  /* Prevents animations from overlapping by adding a transitionnal state */
+  $first('*[data-quotes]').classList.add('transition');
+
+  setTimeout(function() {
+    $first('*[data-quotes]').classList.remove('transition');
+
+    /* Hack to prevent wrong-side animation */
+    quotes[out_pos].classList.add('no-transition');
+    setTimeout(function() { quotes[out_pos].classList.remove('no-transition') }, 50);
+
+    /* Resets the out quote's position after the transition is over */
+    quotes[out_pos].classList.remove('outLeft');
+    quotes[out_pos].classList.remove('outRight');
+
+  }, 650);
+}
+
+/* Find the current previous quote's position */
+function findPreviousQuote() {
+  return ((activeQuote - 1) >= 0) ? (activeQuote - 1)
+                                  : (quotesLength - 1);
+}
+
+/* Find the current next quote's position */
+function findNextQuote() {
+  return ((activeQuote + 1) <= (quotesLength - 1)) ? (activeQuote + 1)
+                                                   : 0;
+}

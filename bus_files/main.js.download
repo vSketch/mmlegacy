@@ -1,0 +1,13 @@
+// navigation
+
+(function () {
+    var navBtn = document.getElementById('nav_btn');
+    var nav = document.querySelectorAll('.site-header > nav')[0];
+    var branding = document.querySelectorAll('.site-header > .branding')[0];
+    var toggleNav = function () {
+        nav.classList.toggle('open');
+        branding.classList.toggle('nav-open');
+    };
+    navBtn.addEventListener('click', toggleNav, false);
+
+}());

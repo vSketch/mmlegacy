@@ -1,0 +1,22 @@
+var touchBuffer = 80;
+var touchStartX;
+
+$e(window, 'load', function() {
+  $e($first('*[data-quotes]'), 'touchstart', function(ev) {
+    touchStartX = ev.touches[0].pageX;
+  });
+
+  $e($first('*[data-quotes]'), 'touchmove', function(ev) {
+    var touchX = ev.changedTouches[0].pageX;
+
+    /* Prevent scrolling when touch reaches a certain horizontal threshold */
+    if (Math.abs(touchX - touchStartX) > (touchBuffer / 4))
+      ev.preventDefault();
+
+    if (touchX > touchStartX + touchBuffer)
+      updateQuotes('left');
+
+    if (touchX < touchStartX - touchBuffer)
+      updateQuotes('right');
+  });
+});
